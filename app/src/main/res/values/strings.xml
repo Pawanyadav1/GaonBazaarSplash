@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name" translatable="false">GaonBazaarSplash</string>
+    <string name="Don_t_have_an_Account_Sign_Up" translatable="false">Don\'t have an Account?<font color="#D6060D"> Sign Up</font></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--to toggle the open close button
+            of the navigation drawer-->
+    <string name="nav_open" translatable="false">Open</string>
+    <string name="nav_close" translatable="false">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+</resources>

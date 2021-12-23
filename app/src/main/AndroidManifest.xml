@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.devrik.GaonBazaar">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.START_VIEW_PERMISSION_USAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/gaonlogo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GaonBazaarSplash"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ShowFarmersActivity"></activity>
+        <activity android:name=".ShowMyFarmerActivity" />
+        <activity android:name=".ShowProfileActivity" />
+        <activity android:name=".TotalAmountActivity" />
+        <activity android:name=".ShowMyProductActivity" />
+        <activity android:name=".ContectUsActivity" />
+        <activity android:name=".SellItemActivity" />
+        <activity android:name=".AddProductFormerAndVlv" />
+        <activity android:name=".MonthlyTransactionActivity" />
+        <activity android:name=".YesterdayTransaction_Activity" />
+        <activity android:name=".TransactionWeeklyActivity" />
+        <activity android:name=".AvailableBalanceActivity" />
+        <activity
+            android:name=".WellcomeAddfarmerVlv"
+            android:exported="true" />
+        <activity
+            android:name=".VlvAddFarmerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ForgetPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UpDateProfileActivity"
+            android:exported="true" />
+        <activity android:name=".AddAccountDetailsScreen" />
+        <activity android:name=".ConsultancyService" />
+        <activity android:name=".SeedDetailScreenActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".BuyItemActivity" />
+        <activity android:name=".SignInGaonActivity" />
+        <activity android:name=".SelectTypeActivity" />
+        <activity android:name=".HomeScreenActivity" />
+        <activity android:name=".Otp_Sign_Up_Activity" />
+        <activity android:name=".SignUpGaon" />
+        <activity android:name=".SplashGaonScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>
