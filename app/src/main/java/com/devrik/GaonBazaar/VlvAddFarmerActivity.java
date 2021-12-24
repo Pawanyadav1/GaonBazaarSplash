@@ -50,7 +50,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class VlvAddFarmerActivity extends AppCompatActivity {
 
 
-    String ID = "";
+    String USERID = "";
     MaterialButton button2;
     EditText name, fname, mobile;
     ImageView camera,addidimage,adharphoto;
@@ -106,7 +106,7 @@ public class VlvAddFarmerActivity extends AppCompatActivity {
         button2 = findViewById(R.id.button2);
         spin_id = findViewById(R.id.spin_id);
 
-        ID = SharedHelper.getKey(VlvAddFarmerActivity.this, APPCONSTANT.id);
+        USERID = SharedHelper.getKey(VlvAddFarmerActivity.this, APPCONSTANT.id);
 
         addStateModelArrayList= new ArrayList<>();
         Arr_StateID = new ArrayList<>();
@@ -405,8 +405,9 @@ public class VlvAddFarmerActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         Log.e("sddssds", f +"");
         Log.e("sddssds", f2 +"");
+        Log.e("sddssds", USERID);
         AndroidNetworking.upload(API.add_farmer)
-               // .addMultipartParameter("user_id",ID)
+                .addMultipartParameter("user_id",USERID)
                 .addMultipartParameter("name", name.getText().toString().trim())
                 .addMultipartParameter("parent_name", fname.getText().toString().trim())
                 .addMultipartParameter("phone", mobile.getText().toString().trim())

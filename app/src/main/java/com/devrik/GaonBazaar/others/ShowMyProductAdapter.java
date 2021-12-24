@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdapter.ViewHolder> {
     Context context;
     ArrayList<MyModel> myModelArrayList;
+    int countBird, countBird1;
 
     public ShowMyProductAdapter(Context context, ArrayList<MyModel> myModelArrayList) {
         this.context = context;
@@ -55,6 +57,8 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
             holder.txtcompeny.setText(myModel.getCompany());
             holder.txtprice.setText(myModel.getPrice());
             holder.name.setText(myModel.getName());
+            holder.edtBirdFromValue.setText(myModel.getQuantity());
+
 
             try {
                 Log.e("sfdh", myModel.getPath()+"");
@@ -64,11 +68,46 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(holder.seed_img);
 
+                holder.txtBirdFromMinus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //   String strProdQ = holder.edtBirdFromValue.getText().toString();
+
+                        countBird--;
+
+                        holder.edtBirdFromValue.setText(String.valueOf(countBird));
+                        if (countBird > 1) {
+
+
+                        }
+
+               /* if (Integer.parseInt(strProdQ) > 1) {
+                    String new_str = String.valueOf(Integer.parseInt(strProdQ) - 1);
+                    Viewholder.edtBirdFromValue.setText(new_str);
+                    //edtBirdFromValue.setText(new_str.substring(2,new_str.length()-2));
+                }*/
+                    }
+                });
+
+                holder.txtBirdFromPlus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        countBird1++;
+
+                        holder.edtBirdFromValue.setText(String.valueOf(countBird1));
+                    }
+                });
+
                 holder.btn_sell.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(context, SeedDetailScreenActivity.class);
                         context.startActivity(intent);
+
+
+
+
                     }
                 });
 
@@ -88,8 +127,9 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         CircleImageView seed_img;
-        Button btn_sell,incriment,dcreement;
-        TextView name,txtCommdity,txtvariety,txtbrand,txtcompeny,txtprice,text_quantity;
+        Button btn_sell;
+        EditText edtBirdFromValue;
+        TextView name,txtCommdity,txtvariety,txtbrand,txtcompeny,txtprice,txtBirdFromMinus,txtBirdFromPlus;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -100,9 +140,9 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
             txtbrand=itemView.findViewById(R.id.txtbrand);
             txtcompeny=itemView.findViewById(R.id.txtcompeny);
             name=itemView.findViewById(R.id.name);
-            dcreement=itemView.findViewById(R.id.dcreement);
-            incriment=itemView.findViewById(R.id.incriment);
-            text_quantity=itemView.findViewById(R.id.text_quantity);
+            edtBirdFromValue=itemView.findViewById(R.id.edtBirdFromValue);
+            txtBirdFromMinus=itemView.findViewById(R.id.txtBirdFromMinus);
+            txtBirdFromPlus=itemView.findViewById(R.id.txtBirdFromPlus);
             txtprice=itemView.findViewById(R.id.txtprice);
             btn_sell=itemView.findViewById(R.id.btn_sell);
 

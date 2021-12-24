@@ -14,7 +14,7 @@ import com.google.android.material.card.MaterialCardView;
 public class WellcomeAddfarmerVlv extends AppCompatActivity {
     public static DrawerLayout drawer;
     ImageView back,menu;
-MaterialCardView farmer1;
+    MaterialCardView farmer1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

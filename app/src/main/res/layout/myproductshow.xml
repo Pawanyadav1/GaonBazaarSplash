@@ -140,42 +140,55 @@
 
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/linearQuantit"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
                     android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:weightSum="3">
 
-                    <Button
-                        android:id="@+id/dcreement"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/brown"
-                        android:textColor="@color/black"
-                        android:onClick="decreaseInteger"
-                        android:text="-" />
 
                     <TextView
-                        android:id="@+id/text_quantity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:text="0"
-                        android:textStyle="bold"
-                        android:textColor="@color/black" />
+                        android:id="@+id/txtBirdFromMinus"
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:layout_weight="1"
+                        android:background="#1B000000"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
 
-                    <Button
-                        android:id="@+id/incriment"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:backgroundTint="@color/brown"
-                        android:textColor="@color/black"
-                        android:onClick="increaseInteger"
-                        android:text="+" />
+
+                    <EditText
+                        android:id="@+id/edtBirdFromValue"
+                        android:layout_width="50dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittextcorner"
+                        android:text="0"
+                        android:inputType="textEmailAddress"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
+
+
+                    <TextView
+                        android:id="@+id/txtBirdFromPlus"
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="#1B000000"
+                        android:text="+"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
 
                 </LinearLayout>
+
 
 
                 <LinearLayout
