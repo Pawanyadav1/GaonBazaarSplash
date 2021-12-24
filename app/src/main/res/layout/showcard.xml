@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="18dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginEnd="30dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -92,25 +92,22 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/delet"
+                android:id="@+id/delete"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/delet"
-                android:layout_marginTop="10dp"
+                android:src="@drawable/delete"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="2dp"
                 android:layout_gravity="end"/>
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="65dp"
-                android:layout_marginTop="43dp"
-                android:layout_gravity="end"
-                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="68dp"
+                    android:layout_marginTop="43dp"
+                    android:layout_gravity="end"
                     android:background="@drawable/rounded_edit_text">
 
                     <TextView
@@ -121,15 +118,13 @@
                         />
                     <Spinner
                         android:id="@+id/spinqty"
-                        android:layout_width="70dp"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:paddingStart="5dp" />
 
                 </RelativeLayout>
 
-
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/txt_quantity"
@@ -140,7 +135,7 @@
                 android:gravity="center"
                 android:background="@drawable/rounded_edit_text"
                 android:layout_marginTop="43dp"
-                android:layout_marginEnd="10dp"/>
+                android:layout_marginEnd="15dp"/>
 
 
         </com.google.android.material.card.MaterialCardView>

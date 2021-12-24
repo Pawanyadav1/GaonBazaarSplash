@@ -120,7 +120,6 @@ public class Show_Product_Adapter extends RecyclerView.Adapter<Show_Product_Adap
         }
 
     public void addcard(ViewHolder holder){
-
         AndroidNetworking.post(API.add_tocart)
                 .addBodyParameter("user_id",USERID)
                 .addBodyParameter("product_id",Productid)
@@ -131,23 +130,20 @@ public class Show_Product_Adapter extends RecyclerView.Adapter<Show_Product_Adap
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        Log.e("dfzcadc",response.toString());
                         try {
-                            Log.e("dfzcadc",response.toString());
                             if (response.getString("result").equals("successfully")){
+                                Toast.makeText(context, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
                                 holder.btn_addcard.setVisibility(View.GONE);
                                 holder.btn_edtcard.setVisibility(View.VISIBLE);
-                               // holder.btn_addcard.setVisibility(View.VISIBLE);
-                                Toast.makeText(context, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
+
 
                             }else{
-
-                                holder.btn_addcard.setVisibility(View.VISIBLE);
-                                holder.btn_edtcard.setVisibility(View.GONE);
-                               // holder.btn_edtcard.setVisibility(View.VISIBLE);
+                                holder.btn_addcard.setVisibility(View.GONE);
+                                holder.btn_edtcard.setVisibility(View.VISIBLE);
                                 Toast.makeText(context, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
 
                             }
-
                         } catch (Exception e) {
                             e.printStackTrace();
                             Log.e("jhdgfg",e.getMessage());

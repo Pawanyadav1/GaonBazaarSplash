@@ -94,8 +94,8 @@ public class TotalAmountActivity extends AppCompatActivity {
                                 showcartmodel.setTotal_price(jsonObject.getString("total_price"));
                                 showcartmodel.setSubtotal_amount(jsonObject.getString("subtotal_amount"));
 
-                                JSONArray jsonArray1 =new JSONArray(jsonObject.getString("product"));
-                                for (int j = 0; j < jsonArray1.length(); j++) {
+                                    JSONArray jsonArray1 =new JSONArray(jsonObject.getString("product"));
+                                    for (int j = 0; j < jsonArray1.length(); j++) {
                                     Log.e("hsfhjgj",jsonObject.getString("product"));
                                     JSONObject object = jsonArray1.getJSONObject(j);
                                     showcartmodel.setProduct_id(object.getString("product_id"));
@@ -113,6 +113,7 @@ public class TotalAmountActivity extends AppCompatActivity {
                                 Show_Cart_Adapter adapter = new Show_Cart_Adapter(context, cartModelArrayList);
                                 rv_showcard.setAdapter(adapter);
                             }
+
                         } catch (Exception e) {
                             e.printStackTrace();
                             Log.e("djkfg",e.getMessage());

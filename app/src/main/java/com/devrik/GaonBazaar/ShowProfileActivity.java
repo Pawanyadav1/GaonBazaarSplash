@@ -99,9 +99,9 @@ ProgressBar progressBar;
                            profilemodel.setPath(response.getString("path"));
 
                             Glide.with(ShowProfileActivity.this)
-                                    .load(profilemodel.getPath("")+profilemodel.getImage(""))
+                                    .load(profilemodel.getPath()+profilemodel.getImage())
                                     .into(myprofile_photo);
-                            Log.e("rgfdfgdgf", profilemodel.getPath("")+profilemodel.getImage("") );
+                            Log.e("rgfdfgdgf", profilemodel.getPath()+profilemodel.getImage());
 
                             Log.e("kdujhgf",response.getString("photo"));
                             Log.e("kdujhgf",response.getString("image"));

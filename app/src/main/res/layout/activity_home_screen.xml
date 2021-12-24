@@ -48,19 +48,33 @@
                         android:layout_height="80dp"
                         android:scaleType="fitXY"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/profile2" />
 
                     <TextView
+                        android:id="@+id/text_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginTop="30dp"
                         android:layout_toRightOf="@+id/profile"
                         android:text=""
                         android:textColor="@color/black"
                         android:textSize="18sp" />
+
+
+                    <TextView
+                        android:id="@+id/text_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@+id/text_name"
+                        android:layout_toRightOf="@+id/profile"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
                 </RelativeLayout>
 
                 <LinearLayout
@@ -253,6 +267,9 @@
             </LinearLayout>
         </ScrollView>
     </com.google.android.material.navigation.NavigationView>
+
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
 
 

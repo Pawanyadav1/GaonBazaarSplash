@@ -95,7 +95,6 @@ ProgressBar progressBar;
         Log.e("type", USERTYPE);
         Log.e("mobile",phone.getText().toString().trim());
         Log.e("password", password.getText().toString().trim());
-
         AndroidNetworking.post(API.login)
                 .addBodyParameter("type",USERTYPE)
                 .addBodyParameter("phone",phone.getText().toString().trim())

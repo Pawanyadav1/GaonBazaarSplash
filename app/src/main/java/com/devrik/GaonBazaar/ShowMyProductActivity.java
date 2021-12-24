@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +30,6 @@ import java.util.ArrayList;
 
 public class ShowMyProductActivity extends AppCompatActivity {
 
-    public static DrawerLayout drawer;
     Context context = ShowMyProductActivity.this;
     RecyclerView.LayoutManager layoutManager;
     ArrayList<MyModel> myModelArrayList = new ArrayList<>();
