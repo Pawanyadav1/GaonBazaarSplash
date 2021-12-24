@@ -40,6 +40,7 @@ public class TotalAmountActivity extends AppCompatActivity {
     Button btn_next;
     ProgressBar progressBar;
     String User_Id="";
+    //user id ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
