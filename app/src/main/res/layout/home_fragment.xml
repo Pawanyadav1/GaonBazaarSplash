@@ -11,6 +11,7 @@
         android:id="@+id/menulo"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:elevation="20dp"
         android:background="@color/white">
 
         <ImageView
@@ -31,30 +32,140 @@
         android:orientation="vertical"
         android:layout_below="@+id/menulo">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:elevation="10dp">
+
+
+
+            <TextView
+                android:id="@+id/buyitems"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="BUY"
+                android:textStyle="bold"
+                android:gravity="center"
+             />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/sell_item"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="SELL"
+                android:textStyle="bold"
+                android:gravity="center"
+               />
+
+        </LinearLayout>
+
         <TextView
             android:id="@+id/txt"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/menulo"
-            android:layout_marginTop="40dp"
-            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
             android:text="WELCOME"
             android:textColor="@color/white"
-            android:textSize="40dp"
-            android:textStyle="bold|italic" />
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Mandi Rate's"
+    android:textStyle="bold"
+    android:textColor="@color/white"
+    android:layout_margin="10dp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:id="@+id/rv_mandirate"/>
+
+       <!-- <TextView
+            android:id="@+id/marqueeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:textColor="@color/gold"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Hello guys !! Welcome to GeeksforGeeks Portal !!"
+            android:textSize="17dp"
+            android:textStyle="bold" />-->
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:sliderAnimationDuration="300"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="400"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="5dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#08850D"
+                app:sliderIndicatorUnselectedColor="#FFFFFFFF"
+                app:sliderScrollTimeInSec="3"
+                app:sliderStartAutoCycle="true" />
+
+
+        </RelativeLayout>
 
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Articals"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_margin="10dp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txt2"
-            android:layout_below="@+id/txt"
-            android:gravity="center"
-            android:text="Gaon Bazaar"
-            android:textColor="@color/DarkOrange"
-            android:textSize="25dp"
-            android:textStyle="bold|italic"/>
+            android:id="@+id/rv_article"/>
+        
+        
+        <TextView
+            android:id="@+id/text_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show More"
+            android:textColor="@color/white"
+            android:layout_gravity="end"
+            android:layout_marginRight="10dp"/>
+
 
         <!-- <ViewFlipper
              android:layout_width="match_parent"
@@ -66,13 +177,13 @@
 -->
 
 
-        <RelativeLayout
+      <!--  <RelativeLayout
             android:id="@+id/buy"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="150dp"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
             android:layout_below="@+id/txt2"
             android:orientation="horizontal">
 
@@ -92,12 +203,12 @@
                     android:layout_marginEnd="60dp"
                     android:textColor="@color/black"
                     android:textSize="30dp"
-                    android:textStyle="bold|italic"
+                    android:textStyle="bold"
                     />
 
                 <ImageView
                     android:id="@+id/buy1"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginStart="50dp"
@@ -112,18 +223,17 @@
         <RelativeLayout
             android:id="@+id/sell"
             android:layout_width="match_parent"
-            android:layout_height="185dp"
+            android:layout_height="150dp"
             android:layout_below="@id/buy"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="25dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="25dp"
             android:orientation="vertical">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/sell_item"
                 android:layout_width="match_parent"
-
                 android:layout_height="match_parent"
                 app:cardCornerRadius="30dp">
 
@@ -138,7 +248,7 @@
                     android:text="SELL"
                     android:textColor="@color/black"
                     android:textSize="30dp"
-                    android:textStyle="bold|italic" />
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="60dp"
@@ -150,7 +260,7 @@
             </com.google.android.material.card.MaterialCardView>
 
         </RelativeLayout>
-
+-->
     </LinearLayout>
 
 

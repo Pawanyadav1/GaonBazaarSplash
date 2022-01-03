@@ -25,5 +25,8 @@ public class API {
 
     public static String add_farmer=BASEURL+"add_farmer";
     public static String show_farmer=BASEURL+"show_farmer";
+    public static String show_slider=BASEURL+"show_slider";
+    public static String show_rates=BASEURL+"show_rates";
+    public static String show_artical=BASEURL+"show_artical";
 
 }
