@@ -8,7 +8,6 @@ import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -34,12 +33,14 @@ import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONObject;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class HomeScreenActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     public static DrawerLayout drawer;
     LinearLayout ll_home,ll_profile,ll_addfarmer,ll_showmyfarmer,ll_contact,ll_setting,ll_logout;
     NavigationView navigation;
-    ImageView profile;
+    CircleImageView profile;
     TextView text_name,text_num;
 
     String USERID="";

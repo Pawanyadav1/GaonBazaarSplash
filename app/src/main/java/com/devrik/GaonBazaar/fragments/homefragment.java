@@ -283,6 +283,7 @@ public class homefragment extends Fragment {
                                 articleModel.setPath(jsonObject.getString("path"));
                                 articleModel.setId(jsonObject.getString("id"));
                                 articleModelArrayList.add(articleModel);
+
                             }
 
                             rv_article.setHasFixedSize(true);

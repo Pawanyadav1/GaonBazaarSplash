@@ -46,7 +46,7 @@ public class Show_Category_Adapter extends RecyclerView.Adapter<Show_Category_Ad
                 Log.e("dkjh", CategoryModel.getPath());
                 Log.e("dkjh", CategoryModel.getImage());
                 Glide.with(context).load(CategoryModel.getPath()+CategoryModel.getImage())
-                        .placeholder(R.drawable.spry).override(250, 250)
+                        //.placeholder(R.drawable.spry).override(250, 250)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(holder.seed2);
 

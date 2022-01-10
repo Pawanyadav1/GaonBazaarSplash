@@ -16,7 +16,8 @@
            <ImageView
                android:id="@+id/back"
                android:layout_width="35dp"
-               android:layout_height="match_parent"
+               android:layout_height="24dp"
+               android:layout_centerVertical="true"
                android:layout_marginStart="10dp"
                android:src="@drawable/ic_baseline_arrow_back" />
        </RelativeLayout>
@@ -59,11 +60,11 @@
 
            </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/buyit"
-                android:id="@+id/rv_cate"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_cat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/buyit" />
 
 
     <ProgressBar
@@ -73,7 +74,7 @@
         android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:indeterminateDrawable="@drawable/progressbar"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 
 </RelativeLayout>

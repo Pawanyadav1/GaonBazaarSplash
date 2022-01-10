@@ -9,9 +9,8 @@
             android:id="@+id/cate1"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp"
-            >
+            android:elevation="15dp"
+            app:cardCornerRadius="15dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -22,21 +21,22 @@
                     android:id="@+id/seed2"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
-                    android:src="@drawable/spry"
-                   />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/spry" />
 
                 <TextView
                     android:id="@+id/txtSeedName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:layout_centerInParent="true"
-                    android:text="Sprey"
-                    android:layout_marginTop="5dp"
                     android:layout_below="@id/seed2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="Sprey"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
-            </RelativeLayout>
 
+
+            </RelativeLayout>
 
         </com.google.android.material.card.MaterialCardView>
 

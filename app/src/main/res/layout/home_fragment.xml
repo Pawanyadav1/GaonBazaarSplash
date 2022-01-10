@@ -25,21 +25,25 @@
 
 
     </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/menulo">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@+id/menulo">
+        android:orientation="vertical">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:weightSum="2"
+            android:elevation="10dp"
             android:orientation="horizontal"
-            android:elevation="10dp">
-
+            android:weightSum="2">
 
 
             <TextView
@@ -48,14 +52,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:text="BUY"
-                android:textStyle="bold"
                 android:gravity="center"
-             />
+                android:text="BUY"
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="2dp"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/sell_item"
@@ -63,10 +66,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:text="SELL"
-                android:textStyle="bold"
                 android:gravity="center"
-               />
+                android:text="SELL"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -75,50 +77,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/menulo"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
             android:text="WELCOME"
             android:textColor="@color/white"
             android:textSize="25dp"
             android:textStyle="bold" />
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Mandi Rate's"
-    android:textStyle="bold"
-    android:textColor="@color/white"
-    android:layout_margin="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Mandi Rate's"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:id="@+id/rv_mandirate"/>
-
-       <!-- <TextView
-            android:id="@+id/marqueeText"
+            android:id="@+id/rv_mandirate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
-            android:padding="10dp"
-            android:textColor="@color/gold"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
             android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:text="Hello guys !! Welcome to GeeksforGeeks Portal !!"
-            android:textSize="17dp"
-            android:textStyle="bold" />-->
-
+            android:singleLine="true" />
 
 
         <RelativeLayout
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
 
             <com.smarteist.autoimageslider.SliderView
                 android:id="@+id/imageSlider"
@@ -145,125 +134,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="Articals"
-            android:textStyle="bold"
             android:textColor="@color/white"
-            android:layout_margin="10dp" />
+            android:textStyle="bold" />
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_article"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rv_article"/>
-        
-        
+            android:layout_height="wrap_content" />
+
+
         <TextView
             android:id="@+id/text_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:padding="5dp"
+            android:layout_margin="5dp"
             android:text="Show More"
-            android:textColor="@color/white"
-            android:layout_gravity="end"
-            android:layout_marginRight="10dp"/>
+            android:background="@color/gold"
+            android:textColor="@color/white" />
 
-
-        <!-- <ViewFlipper
-             android:layout_width="match_parent"
-             android:layout_height="200dp"
-             android:id="@+id/flipper"
-             android:visibility="gone"
-             android:layout_margin="20dp"
-             android:layout_gravity="center"/>
--->
-
-
-      <!--  <RelativeLayout
-            android:id="@+id/buy"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_below="@+id/txt2"
-            android:orientation="horizontal">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/buyitems"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="30dp">
-
-                <TextView
-                    android:id="@+id/txt1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="BUY"
-                    android:layout_marginEnd="60dp"
-                    android:textColor="@color/black"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    />
-
-                <ImageView
-                    android:id="@+id/buy1"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="50dp"
-                    android:src="@drawable/imagesell" />
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/sell"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_below="@id/buy"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="25dp"
-            android:orientation="vertical">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/sell_item"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="30dp">
-
-
-                <TextView
-                    android:id="@+id/txt12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center"
-                    android:layout_marginEnd="60dp"
-                    android:text="SELL"
-                    android:textColor="@color/black"
-                    android:textSize="30dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="50dp"
-                    android:src="@drawable/imagebuy" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </RelativeLayout>
--->
     </LinearLayout>
-
-
+    </ScrollView>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -273,7 +168,5 @@
         android:layout_centerInParent="true"
         android:indeterminateDrawable="@drawable/progressbar"
         android:visibility="gone"/>
-
-
 
 </RelativeLayout>

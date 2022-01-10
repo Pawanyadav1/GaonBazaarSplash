@@ -108,6 +108,44 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
 
         showDetails();
 
+        Arr_StateID = new ArrayList<>();
+        Arr_stateName = new ArrayList<>();
+        Arr_StateID.add("0");
+        Arr_stateName.add("Select state");
+
+        ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, Arr_stateName);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinstate.setAdapter(adapter);
+
+        Arr_districtID = new ArrayList<>();
+        Arr_districtName = new ArrayList<>();
+        Arr_districtID.add("0");
+        Arr_districtName.add("Select district");
+
+        ArrayAdapter adapter1 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, Arr_districtName);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spindistrict.setAdapter(adapter1);
+
+        Arr_blockID = new ArrayList<>();
+        Arr_blockName = new ArrayList<>();
+        Arr_blockID.add("0");
+        Arr_blockName.add("Select Block");
+
+        ArrayAdapter adapter2 = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_spinner_item, Arr_blockName);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinblock.setAdapter(adapter2);
+
+        Arr_villageID = new ArrayList<>();
+        Arr_villageName = new ArrayList<>();
+        Arr_villageID.add("0");
+        Arr_villageName.add("Select Village");
+
+        ArrayAdapter adapter3 = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_spinner_item, Arr_villageName);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinvillage.setAdapter(adapter3);
+
         ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("Select Type of ID");
         arrayList.add("Aadhaar card");
@@ -157,7 +195,6 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
                 typeselectId();
 
                updateprofile();
-
             }
 
         });
@@ -184,13 +221,13 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
     private void typeselectId() {
 
         if (selectedItemID.equals("1")){
-            SharedHelper.putkey(UpDateProfileActivity.this,APPCONSTANT.USER_ID_CARD,"Aadhaar card");
+            SharedHelper.putkey(UpDateProfileActivity.this,APPCONSTANT.USER_ID_CARD,tutorialsName);
 
         } else if(selectedItemID.equals("2")){
-            SharedHelper.putkey(UpDateProfileActivity.this,APPCONSTANT.USER_ID_CARD,"PAN card");
+            SharedHelper.putkey(UpDateProfileActivity.this,APPCONSTANT.USER_ID_CARD,tutorialsName);
 
         } else if(selectedItemID.equals("3")){
-            SharedHelper.putkey(UpDateProfileActivity.this,APPCONSTANT.USER_ID_CARD,"Voter id card");
+            SharedHelper.putkey(UpDateProfileActivity.this,APPCONSTANT.USER_ID_CARD,tutorialsName);
 
         } else {
             Toast.makeText(UpDateProfileActivity.this, "Please select", Toast.LENGTH_SHORT).show();
@@ -453,10 +490,7 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
                         progressBar.setVisibility(View.GONE);
                         addStateModelArrayList= new ArrayList<>();
                         Log.e("uygyggv", "onRespons " + response.toString());
-                        Arr_StateID = new ArrayList<>();
-                        Arr_stateName = new ArrayList<>();
-                        Arr_StateID.add("0");
-                        Arr_stateName.add("Select state");
+
 
                         try {
                             for (int i = 0; i < response.length(); i++) {
@@ -468,9 +502,6 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
 
 
                             }
-                            ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, Arr_stateName);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            spinstate.setAdapter(adapter);
 
                             spinstate.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                 @Override
@@ -521,10 +552,7 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
                         progressBar.setVisibility(View.GONE);
                         adddistrictModelArrayList = new ArrayList<>();
                         Log.e("uygyhggv", "onRespo " + response.toString());
-                        Arr_districtID = new ArrayList<>();
-                        Arr_districtName = new ArrayList<>();
-                        Arr_districtID.add("0");
-                        Arr_districtName.add("Select district");
+
 
                         try {
 
@@ -536,10 +564,6 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
 
                             }
 
-                            ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
-                                    android.R.layout.simple_spinner_item, Arr_districtName);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            spindistrict.setAdapter(adapter);
                             spindistrict.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
                                 @Override
@@ -593,12 +617,6 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
                         progressBar.setVisibility(View.GONE);
                         addblockModelArrayList = new ArrayList<>();
                      Log.e("uygyghjgv", "onRespo " + response.toString());
-                        Arr_blockID = new ArrayList<>();
-                        Arr_blockName = new ArrayList<>();
-                        Arr_blockID.add("0");
-                        Arr_blockName.add("Select Block");
-
-                        Log.e("uygyghjgv", "onRespo " + response.toString());
 
                         try {
                             for (int i = 0; i < response.length(); i++) {
@@ -608,11 +626,6 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
                                 Arr_blockID.add(jsonObject.getString("id"));
                                 Arr_blockName.add(jsonObject.getString("name"));
                             }
-
-                            ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
-                                    android.R.layout.simple_spinner_item, Arr_blockName);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            spinblock.setAdapter(adapter);
 
                             spinblock.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                 @Override
@@ -665,10 +678,6 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
                         addvillageModelArrayList = new ArrayList<>();
                         Log.e("uygygfggv", "onRespo " + response.toString());
 
-                        Arr_villageID = new ArrayList<>();
-                        Arr_villageName = new ArrayList<>();
-                        Arr_villageID.add("0");
-                        Arr_villageName.add("Select Village");
 
                         try {
                             for (int i = 0; i < response.length(); i++) {
@@ -679,13 +688,6 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
                                 Arr_villageName.add(jsonObject.getString("name"));
 
                             }
-
-                            ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
-                                    android.R.layout.simple_spinner_item, Arr_villageName);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            spinvillage.setAdapter(adapter);
-
-
                             spinvillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                 @Override
                                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

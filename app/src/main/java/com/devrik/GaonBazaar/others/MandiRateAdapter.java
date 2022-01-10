@@ -1,6 +1,7 @@
 package com.devrik.GaonBazaar.others;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,19 @@ public class MandiRateAdapter extends RecyclerView.Adapter<MandiRateAdapter.View
 
         if (!myModel.equals("")) {
             holder.marqueeText.setText(myModel.getCrops_name());
+            holder.marqueeText.setMarqueeRepeatLimit(2);
+            holder.marqueeText.setHorizontallyScrolling(true);
+            holder.marqueeText.setSingleLine(true);
+            holder.marqueeText.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            holder.marqueeText.setSelected(true);
+
             holder.marqueeText1.setText(myModel.getCrops_price());
-           /* holder.marqueeText.setSelected(true);
-            holder.marqueeText1.setSelected(true);*/
+            holder.marqueeText1.setMarqueeRepeatLimit(2);
+            holder.marqueeText1.setHorizontallyScrolling(true);
+            holder.marqueeText1.setSingleLine(true);
+            holder.marqueeText1.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            holder.marqueeText1.setSelected(true);
+
         }
     }
 

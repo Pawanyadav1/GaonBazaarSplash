@@ -68,7 +68,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginTop="10dp"
-        android:maxLength="15"
+        android:maxLength="25"
         android:background="@drawable/rounded_edit_text"
         android:paddingStart="15dp"
         android:inputType="textPersonName"
@@ -96,9 +96,85 @@
         android:layout_marginEnd="25dp"
         android:background="@drawable/rounded_edit_text"
         android:paddingStart="15dp"
-        android:maxLength="20"
+        android:maxLength="16"
         android:hint="Account Number"
         android:textSize="17dp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:weightSum="2"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:text="Bank"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="185dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:text="Branch"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit_text"
+            android:layout_weight="1">
+
+            <Spinner
+                android:id="@+id/spinbank"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="end"
+                android:paddingStart="5dp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/rounded_edit_text"
+            android:layout_weight="1">
+
+            <Spinner
+                android:id="@+id/spinbranch"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="end"
+                android:paddingStart="5dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -110,6 +186,10 @@
         android:weightSum="2"
         android:layout_marginTop="10dp">
 
+
+
+
+
         <RelativeLayout
             android:layout_width="160dp"
             android:layout_weight="1"
@@ -118,8 +198,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:paddingStart="15dp"
                 android:gravity="center_vertical"
+                android:paddingStart="15dp"
                 android:text="Bank"
                 android:textColor="@color/white"
                 android:textSize="17dp" />
@@ -132,8 +212,8 @@
                 android:layout_marginTop="40dp"
                 android:background="@drawable/rounded_edit_text"
                 android:hint="Select "
-                android:maxLength="15"
                 android:inputType="text"
+                android:maxLength="15"
                 android:paddingStart="5dp"
                 android:textSize="17dp" />
 
@@ -147,8 +227,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:paddingStart="15dp"
             android:gravity="center_vertical"
+            android:paddingStart="15dp"
             android:text="Branch"
             android:textColor="@color/white"
             android:textSize="17dp" />
@@ -157,10 +237,10 @@
             android:id="@+id/branch"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/rounded_edit_text"
             android:hint="Select "
-            android:layout_marginStart="5dp"
             android:inputType="text"
             android:maxLength="15"
             android:paddingStart="5dp"
@@ -219,7 +299,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:indeterminateDrawable="@drawable/progressbar"
-        android:visibility="visible"/>
+        android:visibility="gone"/>
 
 
 </LinearLayout>

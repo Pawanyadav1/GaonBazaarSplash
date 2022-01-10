@@ -32,7 +32,7 @@ public class BuyItemActivity extends AppCompatActivity {
     ProgressBar progressBar;
     RecyclerView.LayoutManager layoutManager ;
     ArrayList<CategoryModel> categoryModelArrayList ;
-    RecyclerView rv_cate;
+    RecyclerView rv_cat;
     ImageView back;
 
 
@@ -41,7 +41,7 @@ public class BuyItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_category_screen);
 
-        rv_cate = findViewById(R.id.rv_cate);
+        rv_cat = findViewById(R.id.rv_cat);
         back = findViewById(R.id.back);
         progressBar = findViewById(R.id.progressBar);
 
@@ -82,9 +82,9 @@ public class BuyItemActivity extends AppCompatActivity {
                                 categoryModelArrayList.add(catModel);
                             }
 
-                            rv_cate.setHasFixedSize(true);
-                            rv_cate.setLayoutManager(new GridLayoutManager(BuyItemActivity.this,2));
-                            rv_cate.setAdapter(new Show_Category_Adapter(context,categoryModelArrayList));
+                            rv_cat.setHasFixedSize(true);
+                            rv_cat.setLayoutManager(new GridLayoutManager(BuyItemActivity.this,2));
+                            rv_cat.setAdapter(new Show_Category_Adapter(context,categoryModelArrayList));
 
                         } catch (JSONException e) {
                             e.printStackTrace();

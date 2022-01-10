@@ -29,8 +29,7 @@ public class ArticleActivity extends AppCompatActivity {
     ImageView back;
 RecyclerView rv_article;
 ProgressBar progressBar;
-
-    ArrayList<ArticleModel> articleModelArrayList;
+ArrayList<ArticleModel> articleModelArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +38,6 @@ ProgressBar progressBar;
         back=findViewById(R.id.back);
         rv_article=findViewById(R.id.rv_article);
         progressBar=findViewById(R.id.progressBar);
-
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,8 +48,6 @@ ProgressBar progressBar;
 
         Artical();
     }
-
-
     public void Artical() {
         progressBar.setVisibility(View.VISIBLE);
         AndroidNetworking.post(API.show_artical)
