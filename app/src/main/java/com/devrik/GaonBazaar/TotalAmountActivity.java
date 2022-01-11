@@ -41,6 +41,7 @@ public class TotalAmountActivity extends AppCompatActivity {
     ProgressBar progressBar;
     String User_Id="";
     //user id ="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,6 @@ public class TotalAmountActivity extends AppCompatActivity {
         btn_next = findViewById(R.id.btn_next);
         progressBar = findViewById(R.id.progressBar);
 
-
         User_Id = SharedHelper.getKey(TotalAmountActivity.this, APPCONSTANT.id);
         Log.e("shgfk",User_Id);
         show_cart();
@@ -59,7 +59,7 @@ public class TotalAmountActivity extends AppCompatActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TotalAmountActivity.this,SeedDetailScreenActivity.class));
+               onBackPressed();
             }
         });
 
@@ -69,6 +69,7 @@ public class TotalAmountActivity extends AppCompatActivity {
                 startActivity(new Intent(TotalAmountActivity.this,AvailableBalanceActivity.class));
             }
         });
+
     }
     public void show_cart() {
         progressBar.setVisibility(View.VISIBLE);
@@ -111,16 +112,16 @@ public class TotalAmountActivity extends AppCompatActivity {
                                 rv_showcard.setHasFixedSize(true);
                                 layoutManager = new LinearLayoutManager(TotalAmountActivity.this, RecyclerView.VERTICAL, false);
                                 rv_showcard.setLayoutManager(layoutManager);
-                                Show_Cart_Adapter adapter = new Show_Cart_Adapter(context, cartModelArrayList);
+                                Show_Cart_Adapter adapter = new Show_Cart_Adapter(context,cartModelArrayList);
                                 rv_showcard.setAdapter(adapter);
                             }
-
                         } catch (Exception e) {
                             e.printStackTrace();
                             Log.e("djkfg",e.getMessage());
                             progressBar.setVisibility(View.GONE);
                         }
                     }
+
                     @Override
                     public void onError(ANError anError) {
                         Log.e("gdnjbg",anError.getMessage());

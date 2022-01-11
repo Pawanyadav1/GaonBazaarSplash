@@ -56,7 +56,7 @@
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -82,7 +82,7 @@
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -104,7 +104,7 @@
                 android:textColor="@color/black"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -142,10 +142,11 @@
 
             </LinearLayout>
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/set_photo_upload"
-                android:layout_width="100dp"
+                android:layout_width="120dp"
                 android:layout_marginTop="5dp"
+                android:scaleType="fitXY"
                 android:layout_gravity="center"
                 android:layout_height="100dp"
                 android:visibility="gone"
@@ -153,7 +154,7 @@
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -176,7 +177,7 @@
                 android:textColor="@color/black" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -199,7 +200,7 @@
                 android:textColor="@color/black" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -222,7 +223,7 @@
                 android:textColor="@color/black" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -249,7 +250,7 @@
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -274,7 +275,7 @@
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -286,7 +287,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:layout_marginStart="50dp"
+    android:layout_marginStart="30dp"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="30dp"
     android:orientation="horizontal">
@@ -295,6 +296,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/Radio_group"
+    android:weightSum="2"
     android:orientation="horizontal">
 
     <RadioButton
@@ -303,6 +305,7 @@
         android:layout_width="164dp"
         android:layout_height="40dp"
         android:text=" New "
+        android:layout_weight="1"
         android:checked="false"
         android:textColor="@color/white" />
 
@@ -311,6 +314,7 @@
         android:buttonTint="@color/black"
         android:layout_width="164dp"
         android:checked="false"
+        android:layout_weight="1"
         android:layout_height="40dp"
         android:text=" OLD" />
 

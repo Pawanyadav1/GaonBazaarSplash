@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.devrik.GaonBazaar.AddProductFormerAndVlv;
 import com.devrik.GaonBazaar.Model.CategoryModel;
 import com.devrik.GaonBazaar.R;
+import com.devrik.GaonBazaar.ShowMyProductActivity;
 
 import java.util.ArrayList;
 
@@ -67,7 +67,7 @@ public class Add_Category_Adapter extends RecyclerView.Adapter<Add_Category_Adap
                     Log.i("TAG","RAM"+CategoryModel.getId());
 
                    // Toast.makeText(context,"found id"+CategoryModel.getId(),Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, AddProductFormerAndVlv.class);
+                    Intent intent = new Intent(context, ShowMyProductActivity.class);
                     intent.putExtra("CAT_ID",CategoryModel.getId());
                     context.startActivity(intent);
 

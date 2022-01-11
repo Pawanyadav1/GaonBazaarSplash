@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,7 @@ public class ShowMyProductActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     ArrayList<MyModel> myModelArrayList = new ArrayList<>();
     RecyclerView rv_myProduct;
+    LinearLayout add_product;
     ImageView back;
     ProgressBar progressBar;
 
@@ -46,19 +48,27 @@ public class ShowMyProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_my_product);
         rv_myProduct = findViewById(R.id.rv_myProduct);
         back=findViewById(R.id.back);
+        add_product=findViewById(R.id.add_product);
         progressBar=findViewById(R.id.progressBar);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShowMyProductActivity.this,SellItemActivity.class));
-                finish();
+               onBackPressed();
+            }
+        });
+
+        add_product.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ShowMyProductActivity.this,AddProductFormerAndVlv.class));
             }
         });
 
         ID = SharedHelper.getKey(ShowMyProductActivity.this,APPCONSTANT.id);
-
         show_product();
+
+
     }
     public void show_product() {
         progressBar.setVisibility(View.VISIBLE);

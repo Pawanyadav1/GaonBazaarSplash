@@ -9,16 +9,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.devrik.GaonBazaar.Model.MyModel;
 import com.devrik.GaonBazaar.R;
 import com.devrik.GaonBazaar.SeedDetailScreenActivity;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -28,6 +35,8 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
     Context context;
     ArrayList<MyModel> myModelArrayList;
     int countBird, countBird1;
+
+    String User_id="",Productid="";
 
     public ShowMyProductAdapter(Context context, ArrayList<MyModel> myModelArrayList) {
         this.context = context;
@@ -47,7 +56,7 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
     @Override
     public void onBindViewHolder(@NonNull ShowMyProductAdapter.ViewHolder holder, int position) {
 
-
+        User_id= SharedHelper.getKey(context,APPCONSTANT.id);
         MyModel  myModel = myModelArrayList.get(position);
         Picasso.get().load(myModel.getPath()+myModel.getImage()).into(holder.seed_img);
         if (!myModel.equals("")) {
@@ -104,10 +113,12 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
                     public void onClick(View v) {
                         Intent intent = new Intent(context, SeedDetailScreenActivity.class);
                         context.startActivity(intent);
-
-
-
-
+                    }
+                });
+                holder.btn_delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        delete();
                     }
                 });
 
@@ -127,7 +138,7 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         CircleImageView seed_img;
-        Button btn_sell;
+        Button btn_sell,btn_delete;
         EditText edtBirdFromValue;
         TextView name,txtCommdity,txtvariety,txtbrand,txtcompeny,txtprice,txtBirdFromMinus,txtBirdFromPlus;
 
@@ -145,10 +156,54 @@ public class ShowMyProductAdapter extends RecyclerView.Adapter<ShowMyProductAdap
             txtBirdFromPlus=itemView.findViewById(R.id.txtBirdFromPlus);
             txtprice=itemView.findViewById(R.id.txtprice);
             btn_sell=itemView.findViewById(R.id.btn_sell);
-
+            btn_delete=itemView.findViewById(R.id.btn_delete);
 
         }
     }
+
+    public void delete(){
+        Productid = SharedHelper.getKey(context,APPCONSTANT.Product_ID);
+        AndroidNetworking.post(API.delete_cart)
+                .addBodyParameter("user_id",User_id)
+                .addBodyParameter("id",Productid)
+                .setPriority(Priority.HIGH)
+                .setTag("cart_delet")
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e("fdkgu", response.toString());
+                        try {
+
+                            if (response.getString("result").equals("successfully"))
+                            {
+                                Toast.makeText(context, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
+
+
+
+                            }else {
+
+                                Toast.makeText(context, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
+
+                            }
+
+
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+
+                    }
+                });
+
+
+    }
+
 }
 
 

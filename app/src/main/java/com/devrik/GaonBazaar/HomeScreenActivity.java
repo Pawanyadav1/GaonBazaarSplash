@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -18,20 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.bumptech.glide.Glide;
-import com.devrik.GaonBazaar.Model.profilemodel;
 import com.devrik.GaonBazaar.fragments.homefragment;
-import com.devrik.GaonBazaar.others.API;
 import com.devrik.GaonBazaar.others.APPCONSTANT;
 import com.devrik.GaonBazaar.others.SharedHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-
-import org.json.JSONObject;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -52,9 +42,6 @@ public class HomeScreenActivity extends AppCompatActivity implements BottomNavig
 
         drawer = findViewById(R.id.drawer);
         navigation = findViewById(R.id.nav_view);
-        profile = findViewById(R.id.profile);
-        text_name = findViewById(R.id.text_name);
-        text_num = findViewById(R.id.text_num);
         ll_home = findViewById(R.id.ll_home);
         ll_profile = findViewById(R.id.ll_profile);
         ll_showmyfarmer = findViewById(R.id.ll_showmyfarmer);
@@ -72,8 +59,6 @@ public class HomeScreenActivity extends AppCompatActivity implements BottomNavig
         ll_logout.setOnClickListener(this);
 
         USERID=SharedHelper.getKey(HomeScreenActivity.this,APPCONSTANT.id);
-
-        showprofile();
 
         ll_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,43 +155,4 @@ public class HomeScreenActivity extends AppCompatActivity implements BottomNavig
         return true;
 
     }
-
-    public void showprofile(){
-        AndroidNetworking.post(API.show_profile)
-                .addBodyParameter("user_id",USERID)
-                .setPriority(Priority.HIGH)
-                .setTag("show_profile")
-                .build()
-                .getAsJSONObject(new JSONObjectRequestListener() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-                        Log.e("smdfhg", response.toString());
-                        try {
-
-                            profilemodel profilemodel = new profilemodel();
-                            text_name.setText(response.getString("name"));
-                            text_num.setText(response.getString("phone"));
-                            profilemodel.setPhoto(response.getString("image"));
-                            profilemodel.setPath(response.getString("path"));
-
-                            Glide.with(HomeScreenActivity.this)
-                                    .load(profilemodel.getPath()+profilemodel.getPhoto())
-                                    .into(profile);
-
-                            Log.e("rgfdfgdgf", profilemodel.getPath()+profilemodel.getPhoto());
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            Log.e("dgjhsdd", e.getMessage());
-
-                        }
-                    }
-                    @Override
-                    public void onError(ANError anError) {
-                        Log.e("dghadfs", anError.getMessage());
-                    }
-                });
-    }
-
 }

@@ -56,6 +56,7 @@ public class Show_Cart_Adapter extends RecyclerView.Adapter<Show_Cart_Adapter.Vi
         if (!cartmodel.equals("")) {
 
             SharedHelper.putkey(context,APPCONSTANT.Product_ID,cartmodel.getProduct_id());
+
             holder.txt_name.setText(cartmodel.getProduct_name());
             holder.txt_quantity.setText(cartmodel.getQuantity());
             holder.txtprice.setText(cartmodel.getPrice());
@@ -64,24 +65,22 @@ public class Show_Cart_Adapter extends RecyclerView.Adapter<Show_Cart_Adapter.Vi
                 Log.e("dfgkjhjfgk",cartmodel.getPath()+"");
                 Log.e("dfgkjhjfgk",cartmodel.getProduct_image()+"");
                 Glide.with(context).load(cartmodel.getPath() + cartmodel.getProduct_image())
-                       .placeholder(R.drawable.crop).override(50, 50)
+                       //.placeholder(R.drawable.crop).override(50, 50)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(holder.img_seeds);
-
-                holder.delete.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        delete();
-
-                    }
-                });
-
 
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.e("dgfadf",e.getMessage());
             }
+
+            holder.delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    delete();
+                }
+            });
+
         }
     }
 

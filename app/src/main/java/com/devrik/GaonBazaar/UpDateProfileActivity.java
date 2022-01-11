@@ -58,9 +58,11 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
     CircleImageView profile_photo;
     Spinner spindistrict,spinstate,spinblock,spinvillage;
     Spinner spin_id;
+    TextView t;
 
     ProgressBar progressBar;
     String  selectedItemID ="", tutorialsName="";
+    String selected;
 
     ArrayList<AddStateModel> addStateModelArrayList;
     ArrayList<String> Arr_StateID;
@@ -84,6 +86,7 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
     private int GALLERY1 = 3, CAMERA1 = 4;
 
     String stateID="",strdistricID="",strBlockID="",strVillageId="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,7 +114,7 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
         Arr_StateID = new ArrayList<>();
         Arr_stateName = new ArrayList<>();
         Arr_StateID.add("0");
-        Arr_stateName.add("Select state");
+        Arr_stateName.add("Select");
 
         ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, Arr_stateName);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -120,7 +123,7 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
         Arr_districtID = new ArrayList<>();
         Arr_districtName = new ArrayList<>();
         Arr_districtID.add("0");
-        Arr_districtName.add("Select district");
+        Arr_districtName.add("Select");
 
         ArrayAdapter adapter1 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, Arr_districtName);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -129,7 +132,7 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
         Arr_blockID = new ArrayList<>();
         Arr_blockName = new ArrayList<>();
         Arr_blockID.add("0");
-        Arr_blockName.add("Select Block");
+        Arr_blockName.add("Select");
 
         ArrayAdapter adapter2 = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, Arr_blockName);
@@ -139,7 +142,7 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
         Arr_villageID = new ArrayList<>();
         Arr_villageName = new ArrayList<>();
         Arr_villageID.add("0");
-        Arr_villageName.add("Select Village");
+        Arr_villageName.add("Select");
 
         ArrayAdapter adapter3 = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, Arr_villageName);
@@ -464,6 +467,11 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
 
                             name.setText(response.getString("name"));
                             mobile.setText(response.getString("phone"));
+                            fname.setText(response.getString("parent_name"));
+                            selected = spinstate.getSelectedItem().toString();
+                            System.out.println(selected);
+                            t.setText(selected);
+                            spinstate.setSelection(0);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

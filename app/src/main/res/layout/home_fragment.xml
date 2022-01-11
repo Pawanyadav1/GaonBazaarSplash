@@ -22,19 +22,12 @@
             android:layout_marginStart="10dp"
             android:src="@drawable/ic_baseline_menu" />
 
-
-
     </RelativeLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/menulo">
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/menulo"
         android:orientation="vertical">
 
 
@@ -54,6 +47,7 @@
                 android:background="@color/white"
                 android:gravity="center"
                 android:text="BUY"
+                android:textColor="@color/bg_color"
                 android:textStyle="bold" />
 
             <View
@@ -67,6 +61,7 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:gravity="center"
+                android:textColor="@color/bg_color"
                 android:text="SELL"
                 android:textStyle="bold" />
 
@@ -151,15 +146,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
-            android:padding="5dp"
             android:layout_margin="5dp"
-            android:text="Show More"
             android:background="@color/gold"
+            android:padding="5dp"
+            android:text="Show More"
             android:textColor="@color/white" />
 
     </LinearLayout>
-    </ScrollView>
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleLarge"

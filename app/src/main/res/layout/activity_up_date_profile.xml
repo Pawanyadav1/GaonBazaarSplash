@@ -371,8 +371,6 @@
 
     </ScrollView>
 
-
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleLarge"
