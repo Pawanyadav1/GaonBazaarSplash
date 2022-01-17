@@ -21,95 +21,145 @@
             android:layout_marginStart="5dp"
             android:src="@drawable/ic_baseline_arrow_back"
             />
-         <TextView
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Contect Us Seller"
-             android:textSize="20dp"
-             android:gravity="center"
-             android:textColor="@color/black"
-            android:layout_centerInParent="true"/>
-
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Contect Us"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
 
         <ImageView
             android:id="@+id/call_btn"
             android:layout_width="30dp"
-            android:layout_marginEnd="5dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_baseline_call_24"
-           android:layout_alignParentEnd="true"
-            />
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_baseline_call_24" />
 
     </RelativeLayout>
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_con">
 
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="25dp"
-            android:id="@+id/tv_email"/>
-
-        <EditText
-            android:id="@+id/et_email"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/rounded_edit_text"
-            android:layout_margin="15dp"
-            android:paddingStart="20dp"
-            android:maxLength="20"
-            android:textSize="18dp"
-            android:inputType="textEmailAddress"
-            android:hint="Enter Email"/>
+            android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/tv_massage"
-            android:textSize="17dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Massage"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"
-            android:layout_marginStart="30dp"/>
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Name"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
 
-        <EditText
-            android:id="@+id/et_massage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@color/white"
-            android:padding="10dp"
-            android:inputType="textMultiLine"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
-            android:textSize="18dp"
-            android:gravity="top"
-            android:hint="Enter Massage"/>
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="Enter Name"
+                android:inputType="text"
+                android:maxLength="20"
+                android:paddingStart="20dp"
+                android:textSize="18dp" />
 
-    </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_sand_massage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:backgroundTint="@color/rad"
-        android:text="send Massage"
-        android:layout_marginBottom="5dp"
-        app:cornerRadius="20dp" />
+            <TextView
+                android:id="@+id/tv_mob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Mobile"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/et_moblie"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="Enter Mobile Number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingStart="20dp"
+                android:textSize="18dp" />
+
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Email"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="Enter Email"
+                android:inputType="textEmailAddress"
+                android:maxLength="20"
+                android:paddingStart="20dp"
+                android:textSize="18dp" />
+
+
+            <TextView
+                android:id="@+id/tv_massage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Massage"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/et_massage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="Enter Massage"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:textSize="18dp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_sand_massage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/rad"
+                android:text="send Massage"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <ProgressBar
         android:id="@+id/progressBar"

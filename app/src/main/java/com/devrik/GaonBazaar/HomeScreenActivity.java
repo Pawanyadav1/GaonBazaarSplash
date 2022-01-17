@@ -28,7 +28,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeScreenActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     public static DrawerLayout drawer;
-    LinearLayout ll_home,ll_profile,ll_addfarmer,ll_showmyfarmer,ll_contact,ll_setting,ll_logout;
+    LinearLayout ll_home,ll_profile,ll_addfarmer,ll_showmyfarmer,ll_contact,ll_feedback,ll_setting,ll_logout;
     NavigationView navigation;
     CircleImageView profile;
     TextView text_name,text_num;
@@ -48,6 +48,7 @@ public class HomeScreenActivity extends AppCompatActivity implements BottomNavig
         ll_contact = findViewById(R.id.ll_contact);
         ll_addfarmer = findViewById(R.id.ll_addfarmer);
         ll_setting = findViewById(R.id.ll_setting);
+        ll_feedback = findViewById(R.id.ll_feedback);
         ll_logout = findViewById(R.id.ll_logout);
 
         ll_home.setOnClickListener(this);
@@ -56,6 +57,7 @@ public class HomeScreenActivity extends AppCompatActivity implements BottomNavig
         ll_addfarmer.setOnClickListener(this);
         ll_showmyfarmer.setOnClickListener(this);
         ll_setting.setOnClickListener(this);
+        ll_feedback.setOnClickListener(this);
         ll_logout.setOnClickListener(this);
 
         USERID=SharedHelper.getKey(HomeScreenActivity.this,APPCONSTANT.id);
@@ -127,6 +129,11 @@ public class HomeScreenActivity extends AppCompatActivity implements BottomNavig
                 drawer.closeDrawer(GravityCompat.START);
                 break;
 
+                case R.id.ll_feedback:
+                startActivity(new Intent(HomeScreenActivity.this,FeedBackActivity.class));
+                drawer.closeDrawer(GravityCompat.START);
+                break;
+
             case R.id.ll_contact:
                 startActivity(new Intent(HomeScreenActivity.this, ContectUsActivity.class));
                 drawer.closeDrawer(GravityCompat.START);
@@ -134,7 +141,7 @@ public class HomeScreenActivity extends AppCompatActivity implements BottomNavig
 
             case R.id.ll_setting:
 
-                //startActivity(new Intent(HomeScreenActivity.this, WellcomeAddfarmerVlv.class));
+                startActivity(new Intent(HomeScreenActivity.this, SettingActivity.class));
                 drawer.closeDrawer(GravityCompat.START);
                 break;
 

@@ -47,8 +47,6 @@ public class ShowMyFarmerActivity extends AppCompatActivity {
         rv_myfarmer=findViewById(R.id.rv_myfarmer);
         progressBar=findViewById(R.id.progressBar);
 
-        My_Farmer();
-
         USERID= SharedHelper.getKey(ShowMyFarmerActivity.this, APPCONSTANT.id);
         Log.e("gffdfrg", USERID);
         back.setOnClickListener(new View.OnClickListener() {
@@ -57,10 +55,14 @@ public class ShowMyFarmerActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        My_Farmer();
+
     }
 
     public void My_Farmer() {
         progressBar.setVisibility(View.VISIBLE);
+        Log.e("gffdfrg", USERID);
         AndroidNetworking.post(API.show_farmer)
                 .addBodyParameter("user_id",USERID)
                // .addBodyParameter("user_id",USERID)
@@ -71,9 +73,10 @@ public class ShowMyFarmerActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONArray response) {
                         progressBar.setVisibility(View.GONE);
-                        Log.e("safdadfa", response.toString());
+                        Log.e("safdfdadfa", response.toString());
 
                         try {
+
                             for (int i = 0; i < response.length(); i++) {
 
                                 JSONObject jsonObject = response.getJSONObject(i);
@@ -102,7 +105,7 @@ public class ShowMyFarmerActivity extends AppCompatActivity {
                             }
                             rv_myfarmer.setHasFixedSize(true);
                             rv_myfarmer.setLayoutManager(new LinearLayoutManager(ShowMyFarmerActivity.this, RecyclerView.VERTICAL, false));
-                            rv_myfarmer.setAdapter(new MyFarmerAdapter(context,myFarmerModelArrayList));
+                            rv_myfarmer.setAdapter(new MyFarmerAdapter(ShowMyFarmerActivity.this,myFarmerModelArrayList));
 
                         } catch (JSONException e) {
                             e.printStackTrace();

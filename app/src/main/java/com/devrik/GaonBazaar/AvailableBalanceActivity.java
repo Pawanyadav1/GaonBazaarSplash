@@ -24,7 +24,7 @@ public class AvailableBalanceActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AvailableBalanceActivity.this,HomeScreenActivity.class));
+                onBackPressed();
             }
         });
 

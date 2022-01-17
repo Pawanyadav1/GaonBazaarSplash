@@ -46,8 +46,8 @@ public class MyFarmerAdapter extends RecyclerView.Adapter<MyFarmerAdapter.ViewHo
         if (!farmerModel.equals("")) {
             holder.txt_name.setText(farmerModel.getName());
             holder.txt_mob.setText(farmerModel.getPhone());
-            holder.txt_address.setText(farmerModel.getVillage());
-            holder.txt_Parent_name.setText(farmerModel.getParent_name());
+            holder.txt_address.setText(farmerModel.getDistrict());
+          //  holder.txt_Parent_name.setText(farmerModel.getParent_name());
 
 
             try {

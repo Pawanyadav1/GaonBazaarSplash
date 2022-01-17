@@ -19,7 +19,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GaonBazaarSplash"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ArticleActivity"></activity>
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeedBackActivity"
+            android:exported="false" />
+        <activity android:name=".ArticleActivity" />
         <activity android:name=".ShowFarmersActivity" />
         <activity android:name=".ShowMyFarmerActivity" />
         <activity android:name=".ShowProfileActivity" />
@@ -53,6 +65,12 @@
         <activity android:name=".SelectTypeActivity" />
         <activity android:name=".HomeScreenActivity" />
         <activity android:name=".Otp_Sign_Up_Activity" />
+        <activity
+            android:name="com.paytm.pgsdk.PaytmPGActivity"
+            android:configChanges="keyboardHidden|orientation|keyboard"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.Other.checksum" />
         <activity android:name=".SignUpGaon" />
         <activity android:name=".SplashGaonScreen">
             <intent-filter>

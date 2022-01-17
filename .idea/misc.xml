@@ -5,21 +5,32 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/progressbar.xml" value="0.14907407407407408" />
         <entry key="app/src/main/res/drawable-v24/rounded_text.xml" value="0.14907407407407408" />
+        <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/activity_add_account_details_screen.xml" value="0.12" />
         <entry key="app/src/main/res/layout/activity_add_product_former_and_vlv.xml" value="0.17175925925925925" />
         <entry key="app/src/main/res/layout/activity_article.xml" value="0.10462962962962963" />
+        <entry key="app/src/main/res/layout/activity_available_balance.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/activity_buy_category_screen.xml" value="0.10462962962962963" />
+        <entry key="app/src/main/res/layout/activity_contect_us.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_feed_back.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.12962962962962962" />
+        <entry key="app/src/main/res/layout/activity_monthly_transaction.xml" value="0.17222222222222222" />
+        <entry key="app/src/main/res/layout/activity_privacy_policy.xml" value="0.17222222222222222" />
+        <entry key="app/src/main/res/layout/activity_select_type.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/activity_sell_item.xml" value="0.17175925925925925" />
+        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/activity_show_my_product.xml" value="0.16940639269406393" />
         <entry key="app/src/main/res/layout/activity_up_date_profile.xml" value="0.12962962962962962" />
+        <entry key="app/src/main/res/layout/activity_wellcome_addfarmer_vlv.xml" value="0.14537037037037037" />
         <entry key="app/src/main/res/layout/article.xml" value="0.10462962962962963" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.11" />
         <entry key="app/src/main/res/layout/mandirate.xml" value="0.10462962962962963" />
+        <entry key="app/src/main/res/layout/myfarmers.xml" value="0.14537037037037037" />
         <entry key="app/src/main/res/layout/myproductshow.xml" value="0.16940639269406393" />
         <entry key="app/src/main/res/layout/product_list.xml" value="0.16940639269406393" />
         <entry key="app/src/main/res/layout/show_category.xml" value="0.17175925925925925" />
         <entry key="app/src/main/res/layout/showcard.xml" value="0.16940639269406393" />
+        <entry key="app/src/main/res/layout/sliderimage.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -19,6 +19,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.devrik.GaonBazaar.Model.ShowCartmodel;
+import com.devrik.GaonBazaar.activity.Other.checksum;
 import com.devrik.GaonBazaar.others.API;
 import com.devrik.GaonBazaar.others.APPCONSTANT;
 import com.devrik.GaonBazaar.others.SharedHelper;
@@ -33,7 +34,7 @@ public class TotalAmountActivity extends AppCompatActivity {
 
     Context context = TotalAmountActivity.this;
     RecyclerView.LayoutManager layoutManager;
-    ArrayList<ShowCartmodel> cartModelArrayList = new ArrayList<>();
+    ArrayList<ShowCartmodel> cartModelArrayList;
     RecyclerView rv_showcard;
     ImageView back_btn;
     TextView total_price;
@@ -66,7 +67,7 @@ public class TotalAmountActivity extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TotalAmountActivity.this,AvailableBalanceActivity.class));
+                startActivity(new Intent(TotalAmountActivity.this, checksum.class));
             }
         });
 
@@ -82,31 +83,33 @@ public class TotalAmountActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         progressBar.setVisibility(View.GONE);
+                        cartModelArrayList = new ArrayList<>();
                         try {
                             Log.e("dhkjhv",response.toString());
                             if (response.getString("result").equals("successfull"));
                             JSONArray jsonArray = new JSONArray(response.getString("data"));
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                ShowCartmodel s1 = new ShowCartmodel();
                                 Log.e("jfnbgjc", response.getString("data") );
-                                ShowCartmodel showcartmodel = new ShowCartmodel();
-                                showcartmodel.setId(jsonObject.getString("id"));
-                                showcartmodel.setProduct_id(jsonObject.getString("product_id"));
-                                showcartmodel.setProduct_price(jsonObject.getString("product_price"));
-                                showcartmodel.setTotal_price(jsonObject.getString("total_price"));
-                                showcartmodel.setSubtotal_amount(jsonObject.getString("subtotal_amount"));
+                                s1.setId(jsonObject.getString("id"));
+                                s1.setProduct_id(jsonObject.getString("product_id"));
+                                s1.setProduct_price(jsonObject.getString("product_price"));
+                                s1.setTotal_price(jsonObject.getString("total_price"));
+                                s1.setSubtotal_amount(jsonObject.getString("subtotal_amount"));
+                                total_price.setText(jsonObject.optString("subtotal_amount"));
 
                                     JSONArray jsonArray1 =new JSONArray(jsonObject.getString("product"));
                                     for (int j = 0; j < jsonArray1.length(); j++) {
                                     Log.e("hsfhjgj",jsonObject.getString("product"));
                                     JSONObject object = jsonArray1.getJSONObject(j);
+                                    ShowCartmodel showcartmodel = new ShowCartmodel();
                                     showcartmodel.setProduct_id(object.getString("product_id"));
                                     showcartmodel.setPrice(object.getString("price"));
                                     showcartmodel.setProduct_name(object.getString("product_name"));
                                     showcartmodel.setQuantity(object.getString("quantity"));
                                     showcartmodel.setProduct_image(object.getString("product_image"));
                                     showcartmodel.setPath(object.getString("path"));
-                                    total_price.setText(object.optString("total_price"));
                                     cartModelArrayList.add(showcartmodel);
                                 }
                                 rv_showcard.setHasFixedSize(true);

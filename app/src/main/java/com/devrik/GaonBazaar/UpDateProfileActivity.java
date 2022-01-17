@@ -468,10 +468,11 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
                             name.setText(response.getString("name"));
                             mobile.setText(response.getString("phone"));
                             fname.setText(response.getString("parent_name"));
-                            selected = spinstate.getSelectedItem().toString();
+
+                            /*selected = spinstate.getSelectedItem().toString();
                             System.out.println(selected);
                             t.setText(selected);
-                            spinstate.setSelection(0);
+                            spinstate.setSelection(0);*/
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -502,7 +503,6 @@ public class UpDateProfileActivity extends AppCompatActivity implements AdapterV
 
                         try {
                             for (int i = 0; i < response.length(); i++) {
-
 
                                 JSONObject jsonObject = response.getJSONObject(i);
                                 Arr_StateID.add(jsonObject.getString("id"));

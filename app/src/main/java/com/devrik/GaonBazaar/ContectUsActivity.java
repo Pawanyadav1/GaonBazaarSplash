@@ -22,7 +22,7 @@ import org.json.JSONObject;
 
 
 public class ContectUsActivity extends AppCompatActivity {
-    EditText et_email, et_massage;
+    EditText et_email, et_massage,et_name,et_moblie;
     ImageView back_btn,call_btn;
     MaterialButton btn_sand_massage;
     ProgressBar progressBar;
@@ -36,6 +36,8 @@ public class ContectUsActivity extends AppCompatActivity {
 
         btn_sand_massage = findViewById(R.id.btn_sand_massage);
         et_email = findViewById(R.id.et_email);
+        et_name = findViewById(R.id.et_name);
+        et_moblie = findViewById(R.id.et_moblie);
         et_massage = findViewById(R.id.et_massage);
         back_btn = findViewById(R.id.back_btn);
         call_btn = findViewById(R.id.call_btn);
@@ -66,7 +68,15 @@ public class ContectUsActivity extends AppCompatActivity {
     }
 
     private void validateDetail() {
-            if (et_email.getText().toString().equals("")) {
+        if (et_name.getText().toString().equals("")) {
+            et_name.setError("please enter Name ");
+            et_name.requestFocus();
+
+        } else if (et_moblie.getText().toString().equals("")) {
+            et_moblie.setError("please enter moblie ");
+            et_moblie.requestFocus();
+
+        } else if (et_email.getText().toString().equals("")) {
                 et_email.setError("please enter email ");
                 et_email.requestFocus();
 
@@ -98,7 +108,7 @@ public class ContectUsActivity extends AppCompatActivity {
                             try {
                                 if (response.getString("result").equals("successful")){
 
-                                    startActivity(new Intent(ContectUsActivity.this,HomeScreenActivity.class));
+                                  finish();
 
                                 }else {
 

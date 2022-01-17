@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rel_header"
+        android:layout_width="match_parent"
+        android:elevation="10dp"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+           android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_arrow_back" />
+
+        <TextView
+            android:id="@+id/tv_profileNo."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Settings"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rel_header">
+
+        <ImageView
+            android:id="@+id/iv_blocklist"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_block" />
+
+        <TextView
+            android:id="@+id/tv_blocklist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/iv_blocklist"
+            android:text="Blocklist"
+            android:textColor="#2F204B"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_notifiction"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/iv_blocklist"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/notifications" />
+
+        <TextView
+            android:id="@+id/tv_notifiction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_blocklist"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/iv_notifiction"
+            android:text="Notification Sound"
+            android:textColor="#2F204B"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/simpleSwitch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="65dp"
+            android:checked="true"
+            android:textOff="Off"
+            android:textOn="On"
+            android:thumbTint="#707070"
+            android:trackTint="#707070" />
+
+        <ImageView
+            android:id="@+id/iv_notifictionVibrate"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/iv_notifiction"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_notifications_off_24" />
+
+        <TextView
+            android:id="@+id/tv_notifictionVibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_notifiction"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/iv_notifictionVibrate"
+            android:text="Notification Vibration"
+            android:textColor="#2F204B"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/simpleSwitch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/simpleSwitch1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:checked="true"
+            android:textColor="@color/purple_500"
+            android:textOff="Off"
+            android:textOn="On"
+            android:thumbTint="#5454F0"
+            android:trackTint="#707070" />
+
+        <ImageView
+            android:id="@+id/iv_about"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/iv_notifictionVibrate"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_privacy_tip_24" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_notifictionVibrate"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/iv_notifictionVibrate"
+
+            android:text="About"
+            android:textColor="#2F204B"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_privacy"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/iv_about"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_privacy_tip_24" />
+
+        <TextView
+            android:id="@+id/tv_privacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_about"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@+id/iv_notifictionVibrate"
+            android:text="Privacy Policy"
+            android:textColor="#2F204B"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/iv_logout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/tv_privacy"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_twotone_power_settings_new_24" />
+
+        <TextView
+            android:id="@+id/tv_clogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_privacy"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/iv_notifictionVibrate"
+            android:text="Logout"
+            android:textColor="#2F204B"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
