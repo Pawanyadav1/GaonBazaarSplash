@@ -16,9 +16,11 @@
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.12962962962962962" />
         <entry key="app/src/main/res/layout/activity_monthly_transaction.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/activity_privacy_policy.xml" value="0.17222222222222222" />
+        <entry key="app/src/main/res/layout/activity_seed_detail_screen.xml" value="0.10277777777777777" />
         <entry key="app/src/main/res/layout/activity_select_type.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/activity_sell_item.xml" value="0.17175925925925925" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.17222222222222222" />
+        <entry key="app/src/main/res/layout/activity_show_my_farmer.xml" value="0.14537037037037037" />
         <entry key="app/src/main/res/layout/activity_show_my_product.xml" value="0.16940639269406393" />
         <entry key="app/src/main/res/layout/activity_up_date_profile.xml" value="0.12962962962962962" />
         <entry key="app/src/main/res/layout/activity_wellcome_addfarmer_vlv.xml" value="0.14537037037037037" />
@@ -27,6 +29,7 @@
         <entry key="app/src/main/res/layout/mandirate.xml" value="0.10462962962962963" />
         <entry key="app/src/main/res/layout/myfarmers.xml" value="0.14537037037037037" />
         <entry key="app/src/main/res/layout/myproductshow.xml" value="0.16940639269406393" />
+        <entry key="app/src/main/res/layout/popup_home_fragment.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/product_list.xml" value="0.16940639269406393" />
         <entry key="app/src/main/res/layout/show_category.xml" value="0.17175925925925925" />
         <entry key="app/src/main/res/layout/showcard.xml" value="0.16940639269406393" />

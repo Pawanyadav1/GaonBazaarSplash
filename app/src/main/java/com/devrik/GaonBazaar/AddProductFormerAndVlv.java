@@ -56,7 +56,7 @@ public class AddProductFormerAndVlv extends AppCompatActivity {
     ImageView set_photo_upload,back_btn;
     RadioButton radio_btn_old,radio_btn_new;
     RadioGroup Radio_group;
-    String userid="",brandID="",id="";
+    String UserID="",brandID="",id="";
     String value;
 
     ArrayList<Add_Category_Adapter> brandModelArrayList;
@@ -78,8 +78,7 @@ public class AddProductFormerAndVlv extends AppCompatActivity {
             value = extras1.getString("CAT_ID");
             //The key argument here must match that used in the other activity
         }
-        userid = SharedHelper.getKey(AddProductFormerAndVlv.this, APPCONSTANT.id);
-        Log.e("select", userid + "");
+
 
         Radio_group = (RadioGroup) findViewById(R.id.Radio_group);
         quantity_size = findViewById(R.id.quantity_size);
@@ -97,11 +96,13 @@ public class AddProductFormerAndVlv extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         spin_Brand = findViewById(R.id.spin_Brand);
 
+        UserID = SharedHelper.getKey(AddProductFormerAndVlv.this, APPCONSTANT.id);
+        Log.e("seldghdect", UserID + "");
+
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddProductFormerAndVlv.this,SellItemActivity.class);
-                startActivity(intent);
+               finish();
             }
         });
 
@@ -240,107 +241,102 @@ public class AddProductFormerAndVlv extends AppCompatActivity {
     }
 
 
-    public void add_product(){
+    public void add_product() {
         progressBar.setVisibility(View.VISIBLE);
+        Log.e("sdfgdfhfdfd", UserID);
+        if (f == null) {
+            AndroidNetworking.post(API.add_product)
+                    .addBodyParameter("user_id", UserID)
+                    .addBodyParameter("category_id", value)
+                    .addBodyParameter("brand", brandID)
+                    .addBodyParameter("name", product_name.getText().toString().trim())
+                    .addBodyParameter("commdity", edt_commiddty.getText().toString().trim())
+                    .addBodyParameter("variety", edt_variety.getText().toString().trim())
+                    .addBodyParameter("company", edt_company.getText().toString().trim())
+                    .addBodyParameter("price", edt_price.getText().toString().trim())
+                    .addBodyParameter("quantity", quantity_size.getText().toString().trim())
+                    .addBodyParameter("stock", radio_btn_new.toString().trim())
+                    .setTag("add product")
+                    .setPriority(Priority.HIGH)
+                    .build()
+                    .getAsJSONObject(new JSONObjectRequestListener() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            progressBar.setVisibility(View.GONE);
+                            Log.e("dchfgjh", response.toString());
+                            try {
+                                if (response.getString("result").equals("successful")) {
+                                    Intent intent = new Intent(AddProductFormerAndVlv.this, ShowMyProductActivity.class);
+                                    startActivity(intent);
 
-        if (f == null){
-          AndroidNetworking.post(API.add_product)
-                  .addBodyParameter("user_id",userid)
-                  .addBodyParameter("category_id",value)
-                  .addBodyParameter("brand",brandID)
-                  .addBodyParameter("name",product_name.getText().toString().trim())
-                  .addBodyParameter("commdity",edt_commiddty.getText().toString().trim())
-                  .addBodyParameter("variety",edt_variety.getText().toString().trim())
-                  .addBodyParameter("company",edt_company.getText().toString().trim())
-                  .addBodyParameter("price",edt_price.getText().toString().trim())
-                  .addBodyParameter("quantity",quantity_size.getText().toString().trim())
-                  .addBodyParameter("stock",radio_btn_new.toString().trim())
-                  .setTag("add product")
-                  .setPriority(Priority.HIGH)
-                  .build()
-                  .getAsJSONObject(new JSONObjectRequestListener() {
-                      @Override
-                      public void onResponse(JSONObject response) {
-                          progressBar.setVisibility(View.GONE);
+                                } else {
+                                    Toast.makeText(AddProductFormerAndVlv.this, "" + response.getString("result"), Toast.LENGTH_SHORT).show();
+                                }
 
-                          Log.e("dchfgjh",response.toString());
-                          try {
-                              if (response.getString("result").equals("successful")) {
-                                  Intent intent= new Intent(AddProductFormerAndVlv.this,ShowMyProductActivity.class);
-                                  startActivity(intent);
-                              } else{
-                                  Toast.makeText(AddProductFormerAndVlv.this, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
-                              }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Log.e("fkjsah", e.getMessage());
+                                progressBar.setVisibility(View.GONE);
 
-                          }
-                          catch (JSONException e) {
-                              e.printStackTrace();
-                              Log.e("fkjsah", e.getMessage());
-                              progressBar.setVisibility(View.GONE);
+                            }
+                        }
 
-                          }
-                      }
+                        @Override
+                        public void onError(ANError anError) {
+                            Log.e("dkgjk", anError.getMessage());
+                            progressBar.setVisibility(View.GONE);
 
-                      @Override
-                      public void onError(ANError anError) {
-                          Log.e("dkgjk",anError.getMessage());
-                          progressBar.setVisibility(View.GONE);
-
-                      }
-                  });
-      }
-        else {
+                        }
+                    });
+        } else {
             progressBar.setVisibility(View.VISIBLE);
             AndroidNetworking.upload(API.add_product)
-                  .addMultipartParameter("user_id",userid)
-                  .addMultipartParameter("category_id",value)
-                  .addMultipartParameter("brand",brandID)
-                  .addMultipartParameter("name",product_name.getText().toString().trim())
-                  .addMultipartParameter("commdity",edt_commiddty.getText().toString().trim())
-                  .addMultipartParameter("variety",edt_variety.getText().toString().trim())
-                  .addMultipartParameter("company",edt_company.getText().toString().trim())
-                  .addMultipartParameter("price",edt_price.getText().toString().trim())
-                  .addMultipartParameter("quantity",quantity_size.getText().toString().trim())
-                  .addMultipartParameter("stock",radio_btn_new.toString().trim())
-                  .addMultipartFile("image",f)
-                  .setTag("add product")
-                  .setPriority(Priority.HIGH)
-                  .build()
-                  .getAsJSONObject(new JSONObjectRequestListener() {
-                      @Override
-                      public void onResponse(JSONObject response) {
-                          progressBar.setVisibility(View.GONE);
+                    .addMultipartParameter("user_id", UserID)
+                    .addMultipartParameter("category_id", value)
+                    .addMultipartParameter("brand", brandID)
+                    .addMultipartParameter("name", product_name.getText().toString().trim())
+                    .addMultipartParameter("commdity", edt_commiddty.getText().toString().trim())
+                    .addMultipartParameter("variety", edt_variety.getText().toString().trim())
+                    .addMultipartParameter("company", edt_company.getText().toString().trim())
+                    .addMultipartParameter("price", edt_price.getText().toString().trim())
+                    .addMultipartParameter("quantity", quantity_size.getText().toString().trim())
+                    .addMultipartParameter("stock", radio_btn_new.toString().trim())
+                    .addMultipartFile("image", f)
+                    .setTag("add product")
+                    .setPriority(Priority.HIGH)
+                    .build()
+                    .getAsJSONObject(new JSONObjectRequestListener() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            progressBar.setVisibility(View.GONE);
 
-                          Log.e("dchfgjh",response.toString());
-                          try {
-                              if (response.getString("result").equals("successful"))
-                              {
-                                  Intent intent= new Intent(AddProductFormerAndVlv.this,ShowMyProductActivity.class);
-                                  startActivity(intent);
-                              }
-                              else{
-                                  Toast.makeText(AddProductFormerAndVlv.this, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
-                              }
+                            Log.e("dchfgjh", response.toString());
+                            try {
+                                if (response.getString("result").equals("successful")) {
+                                    Intent intent = new Intent(AddProductFormerAndVlv.this, ShowMyProductActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(AddProductFormerAndVlv.this, "" + response.getString("result"), Toast.LENGTH_SHORT).show();
+                                }
 
-                          }
-                          catch (JSONException e) {
-                              e.printStackTrace();
-                              Log.e("fkjsah", e.getMessage());
-                              progressBar.setVisibility(View.GONE);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Log.e("fkjsah", e.getMessage());
+                                progressBar.setVisibility(View.GONE);
 
-                          }
-                      }
+                            }
+                        }
 
-                      @Override
-                      public void onError(ANError anError) {
-                          Log.e("fsukgdsuk", anError.getMessage());
-                          progressBar.setVisibility(View.GONE);
+                        @Override
+                        public void onError(ANError anError) {
+                            Log.e("fsukgdsuk", anError.getMessage());
+                            progressBar.setVisibility(View.GONE);
 
 
-                      }
-                  });
+                        }
+                    });
 
-      }
+        }
 
 
     }
@@ -364,8 +360,8 @@ public class AddProductFormerAndVlv extends AppCompatActivity {
 
                         try {
                             for (int i = 0; i < response.length(); i++) {
-                                id = SharedHelper.getKey(AddProductFormerAndVlv.this, APPCONSTANT.id);
-                                Log.e("select", id + "");
+                              /*  id = SharedHelper.getKey(AddProductFormerAndVlv.this, APPCONSTANT.id);
+                                Log.e("select", id + "");*/
                                 //Toast.makeText(AddProductFormerAndVlv.this, ""+response.toString(), Toast.LENGTH_SHORT).show();
                                 JSONObject jsonObject = response.getJSONObject(i);
                                 Arr_BrandID.add(jsonObject.getString("id"));

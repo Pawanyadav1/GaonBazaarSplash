@@ -4,21 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_color"
     tools:context=".PrivacyPolicyActivity">
 
     <RelativeLayout
         android:id="@+id/rel_header"
         android:layout_width="match_parent"
-        android:elevation="10dp"
+        android:layout_height="50dp"
         android:background="@color/white"
-        android:layout_height="50dp">
+        android:elevation="10dp">
+
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_arrow_back"
             android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_baseline_arrow_back" />
 
         <TextView
             android:id="@+id/tv_profileNo."
@@ -32,10 +34,24 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/text_policy"
+        android:id="@+id/text_tital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rel_header"
+        android:layout_marginStart="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text=""
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/text_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_tital"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"

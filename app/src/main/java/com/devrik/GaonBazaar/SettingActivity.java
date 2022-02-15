@@ -17,7 +17,7 @@ import com.devrik.GaonBazaar.others.APPCONSTANT;
 import com.devrik.GaonBazaar.others.SharedHelper;
 
 public class SettingActivity extends AppCompatActivity {
-    ImageView iv_logout;
+    ImageView iv_logout,iv_back;
     TextView tv_about,tv_privacy;
 
     @Override
@@ -28,8 +28,14 @@ public class SettingActivity extends AppCompatActivity {
 
         iv_logout = findViewById(R.id.iv_logout);
         tv_about = findViewById(R.id.tv_about);
+        iv_back = findViewById(R.id.iv_back);
         tv_privacy = findViewById(R.id.tv_privacy);
-
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         tv_privacy.setOnClickListener(new View.OnClickListener() {
             @Override

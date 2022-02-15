@@ -50,7 +50,7 @@ public class ShowMyProductActivity extends AppCompatActivity {
         back=findViewById(R.id.back);
         add_product=findViewById(R.id.add_product);
         progressBar=findViewById(R.id.progressBar);
-
+        ID = SharedHelper.getKey(ShowMyProductActivity.this,APPCONSTANT.id);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +65,7 @@ public class ShowMyProductActivity extends AppCompatActivity {
             }
         });
 
-        ID = SharedHelper.getKey(ShowMyProductActivity.this,APPCONSTANT.id);
+
         show_product();
 
 
@@ -82,6 +82,7 @@ public class ShowMyProductActivity extends AppCompatActivity {
                 .getAsJSONArray(new JSONArrayRequestListener() {
                     @Override
                     public void onResponse(JSONArray response) {
+                        Log.e("sfjgkfshgf", response.toString());
                         progressBar.setVisibility(View.GONE);
                         for (int i = 0; i < response.length(); i++) {
                             try {

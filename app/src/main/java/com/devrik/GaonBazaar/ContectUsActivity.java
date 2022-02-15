@@ -95,7 +95,9 @@ public class ContectUsActivity extends AppCompatActivity {
         private void contact() {
             progressBar.setVisibility(View.VISIBLE);
             AndroidNetworking.post(API.contact_us)
-                    .addBodyParameter("email", et_email.getText().toString().trim())
+                    .addBodyParameter("name", et_name.getText().toString().trim())
+                    .addBodyParameter("mobile", et_moblie.getText().toString().trim())
+                    .addBodyParameter("email",et_email.getText().toString().trim())
                     .addBodyParameter("messages",et_massage.getText().toString().trim())
                     .setTag("contact us")
                     .setPriority(Priority.HIGH)

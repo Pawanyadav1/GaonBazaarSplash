@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_color"
     tools:context=".SettingActivity">
 
 
@@ -11,6 +12,7 @@
         android:id="@+id/rel_header"
         android:layout_width="match_parent"
         android:elevation="10dp"
+        android:background="@color/white"
         android:layout_height="50dp">
 
         <ImageView
@@ -37,7 +39,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/rel_header">
 
-        <ImageView
+     <!--   <ImageView
             android:id="@+id/iv_blocklist"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -55,13 +57,12 @@
             android:text="Blocklist"
             android:textColor="#2F204B"
             android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textStyle="bold" />-->
 
         <ImageView
             android:id="@+id/iv_notifiction"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_below="@+id/iv_blocklist"
             android:layout_marginStart="12dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
@@ -71,7 +72,6 @@
             android:id="@+id/tv_notifiction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_blocklist"
             android:layout_marginTop="20dp"
             android:layout_toRightOf="@+id/iv_notifiction"
             android:text="Notification Sound"
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="20dp"
             android:checked="true"
             android:textOff="Off"
             android:textOn="On"
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/simpleSwitch1"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:checked="true"
             android:textColor="@color/purple_500"
             android:textOff="Off"
@@ -144,7 +144,6 @@
             android:layout_below="@+id/tv_notifictionVibrate"
             android:layout_marginTop="20dp"
             android:layout_toRightOf="@+id/iv_notifictionVibrate"
-
             android:text="About"
             android:textColor="#2F204B"
             android:textSize="18dp"
@@ -194,6 +193,7 @@
             android:textColor="#2F204B"
             android:textSize="18dp"
             android:textStyle="bold" />
+
     </RelativeLayout>
 
 

@@ -87,10 +87,10 @@ public class FeedBackActivity extends AppCompatActivity {
 
     public void feedback(String rating){
         progressBar.setVisibility(View.VISIBLE);
-        AndroidNetworking.post(API.feedback)
+        AndroidNetworking.post(API.add_feedback)
                 .addBodyParameter("user_id",User_Id)
                 .addBodyParameter("rating",rating)
-                .addBodyParameter("feedback",et_feedback.getText().toString())
+                .addBodyParameter("comment",et_feedback.getText().toString())
                 .setPriority(Priority.HIGH)
                 .setTag("terms condition")
                 .build()
@@ -100,29 +100,22 @@ public class FeedBackActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         Log.e("dsfkfdg", response.toString());
                         try {
-                            if (response.getString("result").equals("Feedback Added successfully")){
-                                Toast.makeText(FeedBackActivity.this, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
-
-                                startActivity(new Intent(FeedBackActivity.this,HomeScreenActivity.class));
-
+                            if (response.getString("result").equals("successful")){
                                 //  t.setText("You Rated :"+response.get(rating_bar.getRating()));
                                 rating_bar.setNumStars(response.getInt("rating"));
-
-                            }else
-
+                                startActivity(new Intent(FeedBackActivity.this,HomeScreenActivity.class));
                                 Toast.makeText(FeedBackActivity.this, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
 
-
+                            }else
+                                Toast.makeText(FeedBackActivity.this, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             e.printStackTrace();
                             progressBar.setVisibility(View.GONE);
                         }
-
                     }
                     @Override
                     public void onError(ANError anError) {
                         progressBar.setVisibility(View.GONE);
-
                     }
                 });
     }

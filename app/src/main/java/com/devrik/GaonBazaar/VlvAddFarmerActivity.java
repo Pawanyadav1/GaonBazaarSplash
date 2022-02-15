@@ -662,6 +662,7 @@ public class VlvAddFarmerActivity extends AppCompatActivity {
                                 @Override
                                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                     String villageId = Arr_villageID.get(position);
+                                    String villageName = Arr_villageName.get(position);
                                     Log.e("dcdddcdc", villageId );
 
                                     ((TextView) spinvillage.getChildAt(0)).setTextColor(Color.BLACK);

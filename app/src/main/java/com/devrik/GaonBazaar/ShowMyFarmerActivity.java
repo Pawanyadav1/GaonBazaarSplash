@@ -65,7 +65,6 @@ public class ShowMyFarmerActivity extends AppCompatActivity {
         Log.e("gffdfrg", USERID);
         AndroidNetworking.post(API.show_farmer)
                 .addBodyParameter("user_id",USERID)
-               // .addBodyParameter("user_id",USERID)
                 .setTag("showfarmer")
                 .setPriority(Priority.HIGH)
                 .build()

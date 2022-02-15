@@ -22,7 +22,9 @@ public class API {
     public static String add_tocart=BASEURL+"add_tocart";
     public static String show_profile=BASEURL+"show_profile";
     public static String delete_cart=BASEURL+"delete_cart";
-    public static String feedback=BASEURL+"feedback";
+    public static String about_us=BASEURL+"about_us";
+    public static String privacy_policy=BASEURL+"privacy_policy";
+    public static String add_feedback=BASEURL+"add_feedback";
 
     public static String add_farmer=BASEURL+"add_farmer";
     public static String show_farmer=BASEURL+"show_farmer";
